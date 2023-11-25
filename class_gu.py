@@ -26,9 +26,8 @@ class Guest:
         Функція для визначення чи є номер користувача щасливим.
         '''
         if self.phone_number.count('7') > 3:
-            print(f"Номер користувача {self.name} є щасливим.")
-        else:
-            print(f"Номер користувача {self.name} є не щасливим.")
+            return f"Номер користувача {self.name} є щасливим."
+        return f"Номер користувача {self.name} є не щасливим."
 
 
 class Party:
@@ -45,7 +44,10 @@ class Party:
         '''
         Функція для додавання гостей в список і повернення його.
         '''
-        return self.guests.append(guest)
+        if guest not in self.guests:
+            self.guests.append(guest)
+        else:
+            raise ValueError("Гість вже доданий до списку гостей.")
 
     def find_average_age(self, gender):
         '''
@@ -57,7 +59,9 @@ class Party:
             if guest.gender == gender:
                 total_age += guest.age
                 index += 1
-        return total_age / index
+        if index == 0:
+            raise ZeroDivisionError("Ділити на нуль не можна")
+        return total_age / index 
 
     def list_sort(self):
         '''
@@ -67,3 +71,4 @@ class Party:
         print("Список гостей за номером id:")
         for guest in sorted_guests:
             print(f"id: {guest.id}, Ім'я: {guest.name}, Вік: {guest.age}")
+        return sorted_guests
