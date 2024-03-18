@@ -7,7 +7,7 @@ def calculate_max_hamsters(first, last, counted_hamsters, s, hamsters):
     counted_hamsters[midl] = food_needs
     if food_needs == s:
         return hamsters_count
-    if food_needs > s:
+    elif food_needs > s:
         last = midl - 1
         return calculate_max_hamsters(first, last, counted_hamsters, s, hamsters)
     else:
