@@ -9,8 +9,8 @@ def bfs(x, y, visited):
 
         for i, j in directions:
             x2, y2 = x + i, y + j
-            if (x2 in range(strings) and
-                    y2 in range(columns) and
+            if ((0 <= x2 < len(grid)) and
+                    (0 <= y2 < len(grid[0])) and
                     grid[x2][y2] == 1 and (x2, y2) not in visited):
                 queue.append((x2, y2))
                 visited.add((x2, y2))
