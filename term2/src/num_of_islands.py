@@ -1,19 +1,19 @@
-def bfs(s, c, visited):
+def bfs(x, y, visited):
     strings, columns = len(grid), len(grid[0])
-    queue = [(s, c)]
-    visited.add((s, c))
+    queue = [(x, y)]
+    visited.add((x, y))
 
     while queue:
-        s, c = queue.pop(0)
+        x, y = queue.pop(0)
         directions = [[1, 0], [1, -1], [0, -1], [-1, -1], [-1, 0], [-1, 1], [0, 1], [1, 1]]
 
         for i, j in directions:
-            str2, col2 = s + i, c + j
-            if (str2 in range(strings) and
-                    col2 in range(columns) and
-                    grid[str2][col2] == 1 and (str2, col2) not in visited):
-                queue.append((str2, col2))
-                visited.add((str2, col2))
+            x2, y2 = x + i, y + j
+            if (x2 in range(strings) and
+                    y2 in range(columns) and
+                    grid[x2][y2] == 1 and (x2, y2) not in visited):
+                queue.append((x2, y2))
+                visited.add((x2, y2))
 
 
 def num_of_island(grid):
@@ -21,10 +21,10 @@ def num_of_island(grid):
     islands = 0
     visited = set()
 
-    for s in range(strings):
-        for c in range(columns):
-            if grid[s][c] == 1 and (s, c) not in visited:
-                bfs(s, c, visited)
+    for x in range(strings):
+        for y in range(columns):
+            if grid[x][y] == 1 and (x, y) not in visited:
+                bfs(x, y, visited)
                 islands += 1
     return islands
 
