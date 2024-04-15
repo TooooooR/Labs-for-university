@@ -14,19 +14,26 @@ class TestOfInorderTraversal(unittest.TestCase):
         expected_result = 0
         self.assertEqual(num_of_island(grid), expected_result)
 
-    # def test_2(self):
-    #     grid = [
-    #         [0, 1, 0, 0, 0],
-    #         [1, 1, 1, 1, 0],
-    #         [1, 0, 0, 0, 0],
-    #         [0, 1, 0, 1, 1]
-    #     ]
-    #
-    #     expected_result = 2
-    #     self.assertEqual(num_of_island(grid), expected_result)
+    def test_2(self):
+        grid = [
+            [1, 1, 0, 0, 0, 0, 0, 1, 1, 1],
+            [0, 1, 1, 1, 0, 0, 0, 0, 1, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+            [0, 1, 0, 1, 1, 0, 0, 0, 1, 1],
+            [0, 0, 1, 1, 1, 0, 0, 1, 0, 0],
+            [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 1, 1, 0, 0, 1, 1, 0],
+            [0, 1, 0, 0, 0, 0, 1, 1, 1, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        ]
+
+        expected_result = 5
+        self.assertEqual(num_of_island(grid), expected_result)
 
     def test_3(self):
         grid = [
+            [1, 1, 1, 1, 1],
             [1, 1, 1, 1, 1],
             [1, 1, 1, 1, 1],
             [1, 1, 1, 1, 1],
@@ -34,5 +41,19 @@ class TestOfInorderTraversal(unittest.TestCase):
         ]
 
         expected_result = 1
+        self.assertEqual(num_of_island(grid), expected_result)
+
+    def test_4(self):
+        grid = [
+            [0, 1, 0, 1, 0, 0, 1],
+            [0, 1, 0, 0, 0, 0, 0],
+            [1, 0, 0, 0, 1, 0, 0],
+            [0, 0, 1, 0, 0, 1, 0],
+            [1, 0, 0, 1, 0, 0, 0],
+            [1, 1, 0, 0, 0, 1, 0],
+            [1, 0, 0, 1, 0, 0, 0]
+        ]
+
+        expected_result = 8
         self.assertEqual(num_of_island(grid), expected_result)
 
