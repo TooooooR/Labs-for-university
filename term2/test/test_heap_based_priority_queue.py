@@ -1,5 +1,5 @@
 import unittest
-from heap_based_priority_queue import HeapBasedPriorityQueue
+from src.heap_based_priority_queue import HeapBasedPriorityQueue
 
 
 class TestOfInorderTraversal(unittest.TestCase):

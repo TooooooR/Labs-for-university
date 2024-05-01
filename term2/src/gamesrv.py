@@ -1,4 +1,4 @@
-from heap_based_priority_queue import *
+from heap_based_priority_queue import HeapBasedPriorityQueue
 
 
 def dijkstra(server, number_of_vertex, clients, adjacency_list):

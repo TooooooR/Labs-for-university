@@ -1,5 +1,5 @@
 import unittest
-from humster import find_max_hamsters
+from src.humster import find_max_hamsters
 
 
 class TestOfHumsters(unittest.TestCase):

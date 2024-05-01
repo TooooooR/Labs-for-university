@@ -43,15 +43,3 @@ class HeapBasedPriorityQueue:
         return [node.value for node in self.array]
 
 
-queue = HeapBasedPriorityQueue()
-queue.insert(123, 1)
-queue.insert(377, 12)
-queue.insert('ananas', 9)
-queue.insert(1, 5)
-queue.insert(78, 6)
-queue.insert(12, 10)
-queue.insert('єнот', 11)
-
-print(queue.current_q())
-print(queue.delete_root())
-print(queue.current_q())
