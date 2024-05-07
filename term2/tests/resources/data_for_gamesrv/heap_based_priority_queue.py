@@ -1,3 +1,8 @@
+"""
+this file is needed in this directory for the tests to work correctly, if it is not there, the tests will not work
+"""
+
+
 class Node:
     def __init__(self, value, priority):
         self.value = value

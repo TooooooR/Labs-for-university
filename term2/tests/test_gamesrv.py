@@ -5,7 +5,7 @@ from src.gamesrv import *
 class MyTestCase(unittest.TestCase):
     def test_1(self):
         latency('./resources/data_for_gamesrv/gamesrv_1.in.txt',
-             './resources/data_for_gamesrv/gamesrv_1.out.txt')
+                './resources/data_for_gamesrv/gamesrv_1.out.txt')
         file = open('./resources/data_for_gamesrv/gamesrv_1.out.txt', 'r')
         result = int(file.readline())
         file.close()
@@ -13,7 +13,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_2(self):
         latency('./resources/data_for_gamesrv/gamesrv_2.in.txt',
-             './resources/data_for_gamesrv/gamesrv_2.out.txt')
+                './resources/data_for_gamesrv/gamesrv_2.out.txt')
         file = open('./resources/data_for_gamesrv/gamesrv_2.out.txt', 'r')
         result = int(file.readline())
         file.close()
@@ -21,7 +21,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_3(self):
         latency('./resources/data_for_gamesrv/gamesrv_3.in.txt',
-             './resources/data_for_gamesrv/gamesrv_3.out.txt')
+                './resources/data_for_gamesrv/gamesrv_3.out.txt')
         file = open('./resources/data_for_gamesrv/gamesrv_3.out.txt', 'r')
         result = int(file.readline())
         file.close()
@@ -29,7 +29,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_4(self):
         latency('./resources/data_for_gamesrv/gamesrv_4.in.txt',
-             './resources/data_for_gamesrv/gamesrv_4.out.txt')
+                './resources/data_for_gamesrv/gamesrv_4.out.txt')
         file = open('./resources/data_for_gamesrv/gamesrv_4.out.txt', 'r')
         result = file.readline()
         file.close()
