@@ -1,38 +1,40 @@
-def lan_to_venice(matrix):
-    length = len(matrix)
-    vertices = [False] * length
-    vertices[0] = True
-    num_of_edges = 0
-    length_of_cable = 0
-
-    while num_of_edges < length - 1:
-        minimum = float('inf')
-        x = 0
+def floyd_warshall(adjacency_matrix):
+    length = len(adjacency_matrix)
+    matrix = adjacency_matrix
+    for k in range(length):
         for i in range(length):
-            if vertices[i]:
-                for j in range(length):
-                    if vertices[j] is False and matrix[i][j] != 0 and matrix[i][j] < minimum:
-                        minimum = matrix[i][j]
-                        x = j
+            for j in range(length):
+                if i == j:
+                    continue
+                matrix[i][j] = min(matrix[i][j], matrix[i][k] + matrix[k][j])
 
-        vertices[x] = True
-        num_of_edges += 1
-        length_of_cable += minimum
+    return matrix
 
-    return length_of_cable
+
+def count_sum(matrix):
+    length = len(matrix)
+    lenght_of_cabel = 0
+    floyd_warshall_mtr = floyd_warshall(matrix)
+    for i in range(length):
+        for j in range(length):
+            lenght_of_cabel += floyd_warshall_mtr[i][j]
+
+    return lenght_of_cabel // 2
 
 
 def read_file(file):
-    file = open(file, 'r')
-    first_linex = file.readline()
-    if not first_linex:
-        file.close()
-        return None
+    inf = 99999
+    with open(file, 'r') as file:
+        first_linex = file.readline()
+        if not first_linex:
+            return None
 
-    first_line = list(map(int, first_linex.split(";")))
-    adjacency_matrix = [first_line]
-    for _ in range(len(first_line) - 1):
-        adjacency_matrix.append(list(map(int, file.readline().split(';'))))
-    file.close()
+        first_line = first_linex.strip().split(";")
+        first_line = [int(item) if item != "INF" else inf for item in first_line]
+        adjacency_matrix = [first_line]
+        for _ in range(len(first_line) - 1):
+            row = file.readline().strip().split(';')
+            row = [int(item) if item != "INF" else inf for item in row]
+            adjacency_matrix.append(row)
 
-    return lan_to_venice(adjacency_matrix)
+    return floyd_warshall(adjacency_matrix)

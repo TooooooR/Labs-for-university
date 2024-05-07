@@ -1,26 +1,30 @@
 import unittest
-from lan_to_venice import *
+from src.lan_to_venice import *
 
 
 class MyTestCase(unittest.TestCase):
     def test_1(self):
-        result = read_file('data_1.csv')
-        self.assertEqual(result, 110)
+        floyd_matrix = read_file('./resources/data_for_venice/data_1.csv')
+        result = count_sum(floyd_matrix)
+        self.assertEqual(result, 442)
 
     def test_2(self):
-        result = read_file('data_2.csv')
-        self.assertEqual(result, 10)
+        floyd_matrix = read_file('./resources/data_for_venice/data_2.csv')
+        result = count_sum(floyd_matrix)
+        self.assertEqual(result, 68)
 
     def test_3(self):
-        result = read_file('data_3.csv')
-        self.assertEqual(result, 12)
+        floyd_matrix = read_file('./resources/data_for_venice/data_3.csv')
+        result = count_sum(floyd_matrix)
+        self.assertEqual(result, 112)
 
     def test_4(self):
-        result = read_file('data_4.csv')
-        self.assertEqual(result, 4)
+        floyd_matrix = read_file('./resources/data_for_venice/data_4.csv')
+        result = count_sum(floyd_matrix)
+        self.assertEqual(result, 15)
 
     def test_5(self):
-        result = read_file('data_5.csv')
+        result = read_file('./resources/data_for_venice/data_5.csv')
         self.assertEqual(result, None)
 
 
