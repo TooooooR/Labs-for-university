@@ -1,4 +1,4 @@
-from heap_based_priority_queue import *
+from tests.resources.data_for_gamesrv.heap_based_priority_queue import *
 
 
 def dijkstra(server, number_of_vertex, clients, adjacency_list):

@@ -1,6 +1,5 @@
 import unittest
-from inorder_traversal import searching_first_biggest
-from inorder_traversal import Node
+from src.inorder_traversal import Node, searching_first_biggest
 
 
 class TestOfInorderTraversal(unittest.TestCase):

@@ -1,5 +1,5 @@
 import unittest
-from rabin_karp import *
+from src.rabin_karp import *
 
 
 class TestFiniteAutomata(unittest.TestCase):
