@@ -26,8 +26,3 @@ def rabin_karp(haystack, needle):
             haystack_hash = hashhing(haystack[i + 1:i + 1 + lenght_of_needle])
 
     return indexes
-
-
-haystack = "aaskkyuaaskopaaks"
-needle = "aask"
-print(rabin_karp(haystack, needle))
