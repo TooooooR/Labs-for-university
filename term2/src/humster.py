@@ -26,8 +26,3 @@ def find_max_hamsters(s, hamsters):
     max_hamsters = calculate_max_hamsters(first, last, counted_hamsters, s, hamsters)
 
     return max_hamsters
-
-
-array = [[1, 3], [4, 0], [2, 2]]
-
-print(find_max_hamsters(10, array))

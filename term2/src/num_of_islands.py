@@ -27,13 +27,3 @@ def num_of_island(grid):
                 bfs(x, y, grid, visited)
                 islands += 1
     return islands
-
-
-grid = [
-    [0, 0, 0, 1, 1],
-    [0, 1, 0, 1, 1],
-    [1, 0, 0, 0, 1],
-    [0, 0, 0, 0, 1]
-]
-
-print(f"Кількість островів: {num_of_island(grid)}")

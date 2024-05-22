@@ -21,24 +21,3 @@ def searching_first_biggest(root, node):
         return root.value
     else:
         return node.value
-
-
-root = Node(10)
-root.left = Node(5)
-root.left.parent = root
-root.right = Node(15)
-root.right.parent = root
-root.left.right = Node(7)
-root.left.right.parent = root.left
-root.left.left = Node(3)
-root.left.left.parent = root.left
-root.right.right = Node(20)
-root.right.right.parent = root.right
-root.right.left = Node(12)
-root.right.left.parent = root.right
-
-
-
-
-node = root.right.right
-print(searching_first_biggest(root, node))
